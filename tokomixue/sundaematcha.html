@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembelian Produk</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="mb-4">Produk Kami</h1>
+    <img src="./assets/gambar14.png" alt="">
+
+    <!-- Tombol Beli Pertama -->
+    <button id="beliAwal" class="btn btn-primary">Beli</button>
+
+    <!-- Deskripsi Produk -->
+    <div id="deskripsiProduk" class="mt-5" style="display: none;">
+        <h2>Deskripsi Produk</h2>
+        <p>Sundae Matcha varian yang pas di mood kamu!</p>
+        <!-- Tombol Beli Kedua -->
+        <button id="konfirmasiBeli" class="btn btn-success">Beli</button>
+        <!-- Tombol Tutup -->
+        
+    </div>
+</div>
+
+<!-- Modal untuk Konfirmasi Pembelian -->
+<div class="modal fade" id="popupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Pembelian</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Terima kasih sudah pesan! Mohon Ditunggu ya!
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="tutupDeskripsi" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById('beliAwal').addEventListener('click', function() {
+        document.getElementById('deskripsiProduk').style.display = 'block';
+        document.getElementById('beliAwal').style.display = 'none';
+    });
+
+    document.getElementById('konfirmasiBeli').addEventListener('click', function() {
+        $('#popupModal').modal('show');
+    });
+
+    document.getElementById('tutupDeskripsi').addEventListener('click', function() {
+        window.location.href = 'index.html';
+    });
+</script>
+
+</body>
+</html>
